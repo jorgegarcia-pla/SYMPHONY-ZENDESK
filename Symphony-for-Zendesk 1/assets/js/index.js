@@ -4395,65 +4395,62 @@ function connecWhatsMyccSocket(access_token) {
 
 
 function getChatConvs() {
-	// Hacer las dos peticiones AJAX simultáneamente
-	Promise.all([
-		list_chat_agent(sessionStorage.getItem("accSymphony"), "ZENDESK", "MYCC"),
-		list_sms_chat(sessionStorage.getItem("DIDSymphony")),
-	]).then(function(respuestas) {
-		// Las dos peticiones se han completado con éxito
-		var respuesta1 = respuestas[0];
-		var respuesta2 = respuestas[1];
-
-		var all_chats = [];
-
-		//Leemos respuesta de Symphony Chat
-		for(var i=0; i<respuesta1.length; i++){
-			var modelMessage = {
-				"phone": respuesta1[i].phone,
-				"time": Math.round(Date.parse(respuesta1[i].messages[respuesta1[i].messages.length-1].external_message_date)/1000),
-				"channel": respuesta1[i].channel,
-				"lastMessage": respuesta1[i].last_message
-			};
-			all_chats.push(modelMessage);
-		}
-
-		// Crear arreglo de promesas para las solicitudes de getLastMessageSMS
-		var promesas = respuesta2.map(function(chat) {
-			return getLastMessageSMS(chat.p1, chat.p2);
-		});
-
-		// Esperar a que todas las promesas se resuelvan
-		return Promise.all(promesas).then(function(respuestas4) {
-			// Asociar respuestas4 con respuesta2
-			for (var i = 0; i < respuesta2.length; i++) {
-				respuesta2[i].last_message = respuestas4[i][respuestas4[i].length-1]['text']; // Asignar la respuesta de getLastMessageSMS a cada elemento en respuesta2
-			}
-
-			//Leemos respuesta de SMS
-			for(var i=0; i<respuesta2.length; i++){
-				var modelMessage = {
-					"phone": respuesta2[i].p1 != sessionStorage.getItem("DIDSymphony") ? respuesta2[i].p1 : respuesta2[i].p2,
-					"time": respuesta2[i].timestamp,
-					"channel": "SMS",
-					"lastMessage": respuesta2[i].last_message
-				};
-
-				all_chats.push(modelMessage);
-			}
-			//console.log("Respuestas de las peticiones a 'getLastMessageSMS':", respuestas4);
-			//console.log("Respuesta2 con lastMessageSMS asociado:", respuesta2);
-			all_chats.sort(function(a, b) {
-			    return b.time - a.time;
-			});
-
-			//Pintar chats
-			//console.log("Todos los chats:", all_chats);
-			drawConversations(all_chats);
-		});
-	}).catch(function(error) {
-		// Al menos una de las peticiones falló
-		console.error("Error:", error);
-	});
+    // Mostrar el modal antes de realizar las peticiones AJAX
+    $('#ModalCarga').modal('show');
+    // Hacer las dos peticiones AJAX simultáneamente
+    Promise.all([
+        list_chat_agent(sessionStorage.getItem("accSymphony"), "ZENDESK", "MYCC"),
+        list_sms_chat(sessionStorage.getItem("DIDSymphony")),
+    ]).then(function(respuestas) {
+        // Las dos peticiones se han completado con éxito
+        var respuesta1 = respuestas[0];
+        var respuesta2 = respuestas[1];
+        var all_chats = [];
+        //Leemos respuesta de Symphony Chat
+        for(var i=0; i<respuesta1.length; i++){
+            var modelMessage = {
+                "phone": respuesta1[i].phone,
+                "time": Math.round(Date.parse(respuesta1[i].messages[respuesta1[i].messages.length-1].external_message_date)/1000),
+                "channel": respuesta1[i].channel,
+                "lastMessage": respuesta1[i].last_message
+            };
+            all_chats.push(modelMessage);
+        }
+        // Crear arreglo de promesas para las solicitudes de getLastMessageSMS
+        var promesas = respuesta2.map(function(chat) {
+            return getLastMessageSMS(chat.p1, chat.p2);
+        });
+        // Esperar a que todas las promesas se resuelvan
+        return Promise.all(promesas).then(function(respuestas4) {
+            // Asociar respuestas4 con respuesta2
+            for (var i = 0; i < respuesta2.length; i++) {
+                respuesta2[i].last_message = respuestas4[i][respuestas4[i].length-1]['text']; // Asignar la respuesta de getLastMessageSMS a cada elemento en respuesta2
+            }
+            //Leemos respuesta de SMS
+            for(var i=0; i<respuesta2.length; i++){
+                var modelMessage = {
+                    "phone": respuesta2[i].p1 != sessionStorage.getItem("DIDSymphony") ? respuesta2[i].p1 : respuesta2[i].p2,
+                    "time": respuesta2[i].timestamp,
+                    "channel": "SMS",
+                    "lastMessage": respuesta2[i].last_message
+                };
+                all_chats.push(modelMessage);
+            }
+            //console.log("Respuestas de las peticiones a 'getLastMessageSMS':", respuestas4);
+            //console.log("Respuesta2 con lastMessageSMS asociado:", respuesta2);
+            all_chats.sort(function(a, b) {
+                return b.time - a.time;
+            });
+            //Pintar chats
+            //console.log("Todos los chats:", all_chats);
+            $('#ModalCarga').modal('hide');
+            drawConversations(all_chats);
+        });
+    }).catch(function(error) {
+        // Al menos una de las peticiones falló
+        $('#ModalCarga').modal('hide');
+        console.error("Error:", error);
+    });
 }
 
 function getWhatsConvs() {
