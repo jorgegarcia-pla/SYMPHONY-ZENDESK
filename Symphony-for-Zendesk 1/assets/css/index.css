@@ -1,0 +1,1546 @@
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.icon {
+  padding: 0px;
+}
+
+.profile-image {
+  width: 20px;
+  height: 20px;
+}
+
+.settings-tray {
+  background: #eee;
+  padding: 10px 15px;
+  border-radius: 7px;
+}
+
+.message {
+  color: white;
+  /* Color de texto predeterminado */
+  transition: color 0.3s;
+  /* Transición para suavizar el cambio de color */
+}
+
+.message:hover {
+  color: #0CEBAC;
+  /* Color de texto al pasar el mouse por encima */
+}
+
+.settings-tray .no-gutters {
+  padding: 0;
+}
+
+.settings-tray--right {
+  float: right;
+}
+
+.settings-tray--right i {
+  margin-top: 10px;
+  font-size: 25px;
+  color: grey;
+  margin-left: 14px;
+  transition: 0.3s;
+}
+
+.settings-tray--right i:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.search-box {
+  background: #fafafa;
+  padding: 10px 13px;
+}
+
+.search-box .input-wrapper {
+  background: #fff;
+  border-radius: 40px;
+}
+
+.search-box .input-wrapper i {
+  color: grey;
+  margin-left: 7px;
+  vertical-align: middle;
+}
+
+.friend-drawer {
+  padding: 00px 15px;
+  display: flex;
+  vertical-align: baseline;
+  background: #fff;
+  transition: 0.3s ease;
+}
+
+.friend-drawer--grey {
+  background: #eee;
+}
+
+.friend-drawer .text {
+  margin-left: 12px;
+  width: 70%;
+}
+
+.friend-drawer .text h6 {
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.friend-drawer .text p {
+  margin: 0;
+}
+
+.friend-drawer .time {
+  color: white;
+}
+
+.friend-drawer--onhover:hover {
+  cursor: pointer;
+
+  .message {
+    color: #0CEBAC;
+  }
+}
+
+.friend-drawer--onhover:hover p,
+.friend-drawer--onhover:hover h6,
+.friend-drawer--onhover:hover .time {
+  color: #fff !important;
+}
+
+hr {
+  margin: 5px auto;
+  width: 60%;
+  margin-top: 0.8rem;
+  margin-bottom: 0.3rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  opacity: 0.4;
+}
+
+#directory,
+#tickets,
+#recents,
+#settings {
+  overflow-y: auto;
+  max-height: 100%;
+  overflow-x: hidden;
+}
+
+#NamesIconsCall {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#IconosLlamada {
+  margin-top: -78px;
+  padding: 44px;
+}
+
+#divDialPad {
+  margin-top: -13px;
+}
+
+#hrLlamada {
+  margin-top: -8px;
+  border-color: #D9D9D9;
+  margin-bottom: 10px;
+  width: 80%;
+  opacity: 0.4;
+}
+
+#saveConfOptionsButton {
+  margin-top: -10px;
+  margin-bottom: -10px;
+  padding: 9px;
+  border: 0px !important;
+  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.8) !important;
+}
+
+#logoutButton {
+  padding: 9px !important;
+  box-shadow: 1px 1px 10px #00659e !important;
+}
+
+#urlInput {
+  border: 0px #00a5df;
+  border-width: 10px;
+  box-shadow: 0px 0px 15px #00a5df !important;
+}
+
+#phone {
+  height: 100%;
+}
+
+#estadoLabel {
+  margin-top: -13%;
+}
+
+#callTo {
+  margin-top: 6%;
+  margin-left: 6%;
+  padding: 0.3rem 0.7rem;
+}
+
+#sendButtonIcon {
+  transform: rotate(320deg);
+  font-size: 17px;
+}
+
+#attachFileIcon {
+  font-size: 17px;
+}
+
+.messagehr {
+  width: 90%;
+  border-color: #D9D9D9;
+  margin-top: 16px;
+  margin-bottom: 0.5rem;
+  opacity: 0.4;
+}
+
+.ticketshr{
+  width: 90%;
+  border-color: #D9D9D9;
+  margin-top: -12px;
+  margin-bottom: -6px;
+  opacity: 0.4;
+}
+
+.wordsTickets{
+  margin-left:5%;
+}
+.contactshr {
+  width: 81%;
+  border-color: #D9D9D9;
+  margin-top: 8px;
+  margin-bottom: -3px;
+  opacity: 0.4;
+}
+
+.recentshr {
+  width: 86%;
+  border-color: #D9D9D9;
+  margin-top: 4px;
+  margin-bottom: -5px;
+  opacity: 0.4;
+}
+
+.chat-bubble {
+  padding: 0px 0px;
+  background: #D9D9D9;
+  margin: 5px 30px;
+  border-radius: 9px;
+  position: relative;
+  animation: fadeIn 1s ease-in;
+  left: -20px;
+  border-radius: 5px 5px 5px 0px;
+}
+
+.chat-bubble::before {
+  content: '';
+  position: absolute;
+  top: 88%;
+  left: -3px;
+  transform: translateX(50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 5px 0;
+  border-color: #D9D9D9 transparent transparent transparent;
+  transform: rotate(28deg);
+}
+
+
+.chat-bubbleR::before {
+  content: '';
+  position: absolute;
+  top: 83%;
+  left: 96.4%;
+  transform: translateX(50%);
+  width: 0;
+  height: 10px;
+  border-style: solid;
+  border-width: 13px 5px 0;
+  border-color: #0CEBAC transparent transparent transparent;
+  transform: rotate(326deg);
+  margin-right: 1px;
+}
+
+.AllNumbers{
+  margin-top: -15px;
+}
+
+
+
+.chat-bubbleR {
+  padding: 0px 10px;
+  background: #0CEBAC;
+  margin: 5px 30px;
+  border-radius: 9px;
+  position: relative;
+  animation: fadeIn 1s ease-in;
+  right: -22px;
+}
+
+
+
+.chat-bubble:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-bottom: 0;
+  margin-top: -10px;
+}
+
+/* Pestaña de mensajes izquierdo
+.chat-bubble--left:after {
+  
+    left: 0;
+    border-right-color: #D9D9D9;
+    border-left: 14px;
+    transform: rotate(180deg);
+    margin-top: 0px;
+    transform: scale(-1, -1);
+    z-index: 1;
+}
+*/
+
+
+.chat-bubble--right:after {
+  right: 0;
+  border-left-color: #0CEBAC;
+  border-right: 14px;
+  transform: rotate(180deg);
+  margin-top: 0px;
+}
+
+.chat-bubbleR:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-bottom: 0;
+  margin-top: -10px;
+}
+
+.chat-bubbleR--left:after {
+  left: 0;
+  border-right-color: #eee;
+  border-left: 0;
+  margin-left: -20px;
+}
+
+
+/*.chat-bubbleR--right:after {
+    right: 0;
+    border-left-color: #0CEBAC;
+    border-right: 14px;
+    /*transform: rotate(180deg);
+    margin-top: 0px;
+}*/
+.text-max {
+  max-width: 30px;
+  word-wrap: break-word;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.chat-left {
+  padding: 7px;
+}
+
+.offset-md-8 .chat-bubble {
+  background: blue;
+  color: #fff;
+}
+
+.offset-md-8 .chat-bubbleR {
+  background: #0CEBAC;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px 5px 0 5px;
+}
+
+
+.dateMessage-left {
+  margin: -11px;
+  margin-bottom: 5px;
+}
+
+.dateMessage-right {
+  margin: -11px;
+  margin-bottom: 3px;
+}
+
+#dateMessage-left {
+  font-size: 9px;
+  margin-left: 24px;
+  margin-right: -5px;
+}
+
+#dateMessage-right {
+  font-size: 9px;
+  margin-left: 14px;
+}
+
+#LlamadaActual,
+#NumeroLlamada,
+#TiempoLlamada {
+  text-align: center;
+}
+
+#LlamadaActual {
+  margin-top: -15px;
+}
+
+#NumeroLlamada {
+  text-align: center;
+  font-size: 25px;
+  color: #0CEBAC;
+}
+
+#holdIcon {
+  display: inline-flex;
+  justify-content: space-around;
+}
+
+#dialpadIcon {
+  display: inline-flex;
+  justify-content: space-around;
+}
+
+#transferIcon {
+  display: inline-flex;
+  justify-content: space-around;
+}
+
+#conferenceIcon {
+  display: inline-flex;
+  justify-content: space-around;
+}
+
+/*Pestaña de mensajes derecho
+.offset-md-8 .chat-bubbleR ::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-style: solid;
+  background: #0CEBAC;
+  border-width: 20px 0 0 20px; 
+  border-barChatDiv: transparent transparent #0CEBAC; 
+}
+*/
+.chat-box-tray {
+  background: transparent;
+  display: flex;
+  align-items: baseline;
+  padding: 5px 0px;
+  align-items: center;
+  margin-top: 3px;
+  bottom: 0;
+  justify-content: space-around;
+}
+
+.chat-box-tray input {
+  padding: 7px 9px;
+  margin-left: 9px;
+  margin-right: 0px;
+  border: 0px #00a5df;
+  border-width: 10px;
+  box-shadow: 0px 0px 15px #00a5df !important;
+}
+
+.chat-box-tray button {
+  font-size: 15px;
+  vertical-align: right;
+}
+
+.chat-box-tray button:last-of-type {
+  margin-left: 4px;
+}
+
+#logoMCM2 {
+  max-width: 100%;
+  height: auto;
+  margin-top: 18px;
+  margin-left: -38px;
+}
+
+.tecla {
+  border: thin dotted black
+}
+
+.contact,
+.contact-recents {
+  font-size: 18px;
+}
+
+.contact-number,
+.recent-number,
+.message-number {
+  font-size: 12px;
+  color: white;
+}
+
+.time-recent {
+  font-size: 10px;
+}
+
+.material-icons.md-14 {
+  font-size: 14px;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-30 {
+  font-size: 30px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-40 {
+  font-size: 40px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.material-icons.md-60 {
+  font-size: 60px;
+}
+
+.material-icons.md-70 {
+  font-size: 70px;
+}
+
+.material-icons.md-120 {
+  font-size: 120px;
+}
+
+.material-icons.md-150 {
+  font-size: 150px;
+}
+
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.btn-circle.active {
+  background-color: #007bff !important;
+}
+
+.ml-1 {
+  margin-left: ($spacer * .25) !important;
+}
+
+.list-group-item-action.active {
+  background-color: #00C1FF !important;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+  font-weight: 700;
+  border: none;
+  color: #00659E;
+  background-color: rgba(165, 214, 232, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 10px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
+.line:hover,
+#rejectIncomingCallButton,
+#acceptIncomingCallButton,
+#updateRecentsButton {
+  cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#navMes {
+  display: none
+}
+
+@media only screen and (max-width: 500px) {
+  #logoMCM {
+    display: none
+  }
+
+  #displayNameDiv,
+  #title {
+    font-size: 20px;
+  }
+
+  #numberSymphonyDiv,
+  #text-check {
+    font-size: 15px;
+  }
+
+  .nav-title,
+  .time-recents,
+  #softphoneVersion,
+  #chromeVersionDiv {
+    font-size: 9px;
+  }
+
+  #authForIntegrations {
+    margin-left: 3px;
+  }
+
+  #phone .cover-container,
+  #settings .cover-container {
+    padding: 0px;
+  }
+
+  .nav-item {
+    width: 35px;
+  }
+
+  .number-input .col-3,
+  .col-4,
+  .col-6,
+  .col-10,
+  .col-12 {
+    width: 0%;
+    padding: 0px;
+  }
+
+  .contact,
+  .contact-recents {
+    font-size: 14px;
+  }
+
+  .contact-number {
+    font-size: 11px;
+  }
+
+  input[type="tel"] {
+    font-size: 15px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    font-size: 10px;
+  }
+
+  .p-3 {
+    padding: .2rem !important;
+  }
+
+
+  .material-icons.md-14 {
+    font-size: 10px;
+  }
+
+  .material-icons.md-18 {
+    font-size: 29px;
+  }
+
+  .material-icons.md-24 {
+    font-size: 16px;
+  }
+
+  .material-icons.md-30 {
+    font-size: 16px;
+  }
+
+  .material-icons.md-36 {
+    font-size: 18px;
+  }
+
+  .material-icons.md-40 {
+    font-size: 20px;
+  }
+
+  .material-icons.md-48 {
+    font-size: 24px;
+  }
+
+  .material-icons.md-60 {
+    font-size: 30px;
+  }
+
+  .material-icons.md-70 {
+    font-size: 35px;
+  }
+
+  .material-icons.md-120 {
+    font-size: 60px;
+  }
+
+  .material-icons.md-150 {
+    font-size: 75px;
+  }
+
+  .btn-circle {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    padding: 3px 0;
+    font-size: 8px;
+    line-height: 1.428571429;
+    border-radius: 10px;
+  }
+
+  .btn-circle.btn-lg {
+    width: 44px;
+    height: 44px;
+    padding: 19px 13px;
+    font-size: 15px;
+    line-height: 1.33;
+    border-radius: 118px;
+  }
+
+  .btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 35px;
+  }
+
+}
+
+/* nuevos estilos */
+
+
+/******* clases creadas *********/
+
+.center_items {
+  text-align: center;
+}
+
+.p-3_pddTB {
+  padding: .2rem 0;
+}
+
+
+/*****  id's y clases previamente existentes en la estructura *******/
+
+.addCallButton {
+  background-color: rgba(165, 214, 232, 0.9);
+  border: 2px solid #0CEBAC;
+  display: inline-flex !important;
+}
+
+.addCallButton:hover {
+  background-color: #00659E;
+  border: 2px solid #D9D9D9;
+}
+
+.addCallButton svg path {
+  stroke: #00659E;
+}
+
+.addCallButton:hover svg path {
+  stroke: #FFF;
+}
+
+
+.addCallButton:active svg path {
+  stroke: #0CEBAC;
+}
+
+.addCallButton:active {
+  background-color: #FFF;
+  border: 2px solid #0CEBAC;
+}
+
+#muteButton {
+  display: inline-flex;
+  justify-content: space-around;
+}
+
+#muteButton:hover {
+  background-color: #00659E;
+  color: #FFF;
+  border: 2px solid rgba(165, 214, 232, 0.9);
+}
+
+#muteButton:hover svg rect {
+  stroke: #FFF;
+}
+
+#muteButton:hover svg path {
+  stroke: #FFF;
+}
+
+#muteButton:active {
+  background-color: #0CEBAC;
+  color: #FFF;
+}
+
+#holdButton {
+  display: inline-flex;
+}
+
+#holdButton:hover {
+  background-color: #00659E;
+  color: #FFF;
+  border: 2px solid rgba(165, 214, 232, 0.9);
+}
+
+#holdButton:hover svg rect {
+  stroke: #FFF;
+  fill: #FFF;
+}
+
+#holdButton:hover svg path {
+  stroke: #FFF;
+  fill: #FFF;
+}
+
+#holdButton:active {
+  background-color: #0CEBAC;
+  color: #FFF;
+}
+
+#conferenceButton {
+  display: inline-flex;
+}
+
+#conferenceButton:hover {
+  background-color: #00659E;
+  color: #FFF;
+  border: 2px solid rgba(165, 214, 232, 0.9);
+}
+
+#conferenceButton:hover svg rect {
+  stroke: #FFF;
+}
+
+#conferenceButton:hover svg path {
+  stroke: #FFF;
+}
+
+#conferenceButton:active {
+  background-color: #0CEBAC;
+  color: #FFF;
+}
+
+#transferButton {
+  display: inline-flex;
+}
+
+#transferButton:hover {
+  background-color: #00659E;
+  color: #FFF;
+  border: 2px solid rgba(165, 214, 232, 0.9);
+}
+
+#transferButton:hover svg {
+  stroke: #FFF;
+}
+
+#transferButton:hover svg path {
+  stroke: #FFF;
+}
+
+#transferButton:active {
+  background-color: #0CEBAC;
+  color: #FFF;
+}
+
+#dialpadButton {
+  display: inline-flex;
+}
+
+#dialpadButton:hover {
+  background-color: #00659E;
+  color: #FFF;
+  border: 2px solid rgba(165, 214, 232, 0.9);
+}
+
+#loginButton:hover{
+  color: #000; /* Cambia el color del texto a negro cuando se activa el hover */
+  border-radius: 10px;
+  background-color: #00659E;
+  border: 1px solid #00659E;
+}
+
+#loginButton {
+  margin-bottom: 80px; 
+  margin-top:15px;
+  color: #00659E;
+  background-color: #FFF;
+  border: 1px solid #ffffff73;
+  padding: 9px !important;
+  box-shadow: 1px 1px 10px #4d6370 !important;
+}
+
+#versionLogin{
+  margin-left:85%;
+  font-size: 10px;
+}
+
+#symphonyImg{
+  margin-top:52px;
+}
+
+#dialpadButton:hover svg circle {
+  fill: #FFF;
+}
+
+#dialpadButton:hover svg path {
+  fill: #FFF;
+}
+
+#dialpadButton:active {
+  background-color: #0CEBAC;
+  color: #FFF;
+}
+
+#callButton {
+  border: 2px solid rgba(165, 214, 232, 0.9);
+}
+
+#callButton:hover {
+  border: 2px solid #D9D9D9;
+}
+
+#toPerson,
+#chatTrayBox,
+#subjectTicketInput,
+#commentTicketInput,
+#typeTicketSelect,
+#priorityTicketSelect {
+  border: 0px #00a5df;
+  border-width: 10px;
+  box-shadow: 0px 0px 15px #00a5df !important;
+}
+
+#chatTrayBox{
+  
+  font-family: 'Ubuntu';
+    font-size: 13px;
+    min-height: 34vh;
+    border-radius:10px;
+}
+
+#callButton:active {
+  background-color: #fff;
+  border: 2px solid #0CEBAC;
+}
+
+#callButton:active svg path {
+  fill: #0CEBAC !important;
+}
+
+input {
+  box-sizing: border-box;
+  padding: 0.5% 0.7%;
+  border: 2px solid #D9D9D9;
+  color: #A0A0A0;
+  transition: box-shadow 0.3s;
+  outline: none;
+  text-align: left;
+}
+
+
+
+input:not([type="checkbox"]) {
+  border-radius: 6px !important;
+
+}
+
+input:hover {
+  border: 2px solid #00A5DF;
+  color: #FFF;
+  background-color: #00A5DF;
+}
+
+input:hover::placeholder {
+  color: white;
+}
+
+#chatTrayBox2{
+  background-color: white;
+}
+
+#chatTrayBox2:hover::placeholder {
+  color: grey;
+}
+
+input:focus {
+  border: 2px solid #00A5DF;
+  box-shadow: 0 0 2.5px #00A5DF;
+  color: #000;
+}
+
+input:disabled {
+  border: 2px solid #D9D9D9;
+  background-color: #F0F0F0;
+  color: #A0A0A0 !important;
+  cursor: not-allowed;
+}
+
+select {
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 0.5% 0.7%;
+  border: 2px solid #D9D9D9;
+  color: #A0A0A0;
+  transition: box-shadow 0.3s;
+  outline: none;
+}
+
+select option {
+  color: #000;
+  background-color: #FFF;
+}
+
+select option:checked {
+  color: #FFF !important;
+  font-weight: 700 !important;
+  background-color: #00A5DF !important;
+}
+
+select:hover {
+  border: 2px solid #00A5DF;
+  color: #FFF !important;
+  background-color: #00A5DF;
+}
+
+select:focus {
+  border: 2px solid #00A5DF;
+  box-shadow: 0 0 2.5px #00A5DF !important;
+  color: #000 !important;
+}
+
+select:disabled {
+  border: 2px solid #D9D9D9;
+  background-color: #F0F0F0;
+  color: #A0A0A0;
+  cursor: not-allowed;
+}
+
+#numbers1 button {
+  border: none;
+  color: #00659E;
+  background-color: rgba(165, 214, 232, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#numbers1 button[type="button"]:hover {
+  background-color: #00659E;
+  color: #FFF;
+  border: 2px solid rgba(165, 214, 232, 0.9);
+}
+
+#numbers1 button[type="button"]:active {
+  background-color: #0CEBAC;
+  color: #FFF;
+}
+
+#numbers2 button {
+  border: none;
+  color: #00659E;
+  background-color: rgba(165, 214, 232, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#numbers2 button[type="button"]:hover {
+  background-color: #00659E;
+  color: #FFF;
+  border: 2px solid rgba(165, 214, 232, 0.9);
+}
+
+#numbers2 button[type="button"]:active {
+  background-color: #0CEBAC;
+  color: #FFF;
+}
+
+#numbers3 button {
+  border: none;
+  color: #00659E;
+  background-color: rgba(165, 214, 232, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#numbers3 button[type="button"]:hover {
+  background-color: #00659E;
+  color: #FFF;
+  border: 2px solid rgba(165, 214, 232, 0.9);
+}
+
+#numbers3 button[type="button"]:active {
+  background-color: #0CEBAC;
+  color: #FFF;
+}
+
+#numbers4 button {
+  border: none;
+  color: #00659E;
+  background-color: rgba(165, 214, 232, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#numbers4 button[type="button"]:hover {
+  background-color: #00659E;
+  color: #FFF;
+  border: 2px solid rgba(165, 214, 232, 0.9);
+}
+
+#numbers4 button[type="button"]:active {
+  background-color: #0CEBAC;
+  color: #FFF;
+}
+
+.tab-content {
+  background: rgb(0, 101, 158);
+  background: linear-gradient(180deg, rgba(0, 101, 158, 1) 10%, rgba(0, 165, 223, 1) 100%);
+}
+
+.tab-content1 {
+  background: transparent;
+}
+
+#recentsButton,
+#messagesTabButton,
+#ticketsButton {
+  border: 2px solid #A5D6E8;
+  padding: 7px;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1px;
+  display: inline-flex;
+}
+
+#title {
+  color: #FFF;
+}
+
+.form-check-label {
+  color: #FFF;
+}
+
+#chromeVersionDiv {
+  margin-right: 15px;
+}
+
+#softphoneVersion {
+  color: #FFF;
+  margin-top: 17px;
+  margin-right: 15px;
+}
+
+a.nav-link.active svg path {
+  fill: #0CEBAC;
+}
+
+a.nav-link.active svg circle {
+  fill: #0CEBAC;
+}
+
+a.nav-link.active svg rect {
+  stroke: #0CEBAC;
+}
+
+a.nav-link.active #recentsButton {
+  border: 2px solid #0CEBAC;
+}
+
+a.nav-link.active #messagesTabButton {
+  border: 2px solid #0CEBAC;
+}
+
+a.nav-link.active #ticketsButton {
+  border: 2px solid #0CEBAC;
+}
+
+.label-integrations {
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+}
+
+#saveConfOptionsButton {
+  color: #FFF;
+  border-radius: 10px;
+  background-color: #0CEBAC;
+  border: 1px solid #00659E;
+  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.4);
+}
+
+#saveConfOptionsButton:hover {
+  color: #00659E;
+  background-color: #FFF;
+  border: 1px solid #00A5DF;
+}
+
+#saveConfOptionsButton:active {
+  color: #fff;
+  background-color: #0CEBAC;
+  border: 1px solid #0CEBAC;
+}
+
+#saveConfOptionsButton:disabled {
+  color: #FFF;
+  background-color: #A5D6E8;
+  border: 1px solid #A5D6E8;
+}
+
+#logoutButton {
+  color: #FFF;
+  border-radius: 10px;
+  background-color: #00659E;
+  border: 1px solid #00659E;
+}
+
+#logoutButton:hover {
+  color: #00659E;
+  background-color: #FFF;
+  border: 1px solid #00A5DF;
+}
+
+#logoutButton:active {
+  color: #fff;
+  background-color: #0CEBAC;
+  border: 1px solid #0CEBAC;
+}
+
+#logoutButton:disabled {
+  color: #FFF;
+  background-color: #A5D6E8;
+  border: 1px solid #A5D6E8;
+}
+
+#outputSelect {
+  color: #d9d9d9;
+  ;
+  border: 0px #00a5df;
+  border-width: 10px;
+  box-shadow: 0px 0px 15px #00a5df !important;
+}
+
+.label-audio {
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2vh;
+}
+
+#tabsCall .nav-link.active .nav-title {
+  color: #0CEBAC !important;
+}
+
+#tabsCall .nav-title {
+  color: #fff !important;
+}
+
+.nav-tabs {
+  border: none !important;
+}
+
+.smsButton_Box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFF;
+  padding: 3px;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+.message-number {
+
+  width: 95%;
+  /* Establece el ancho máximo del contenedor */
+  white-space: nowrap;
+  /* Evita que el texto se divida en varias líneas */
+  overflow: hidden;
+  /* Oculta el contenido que excede el ancho del contenedor */
+  text-overflow: ellipsis;
+  /* Muestra tres puntos suspensivos (...) cuando el texto se corta */
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: 10ch; /* Establece el ancho máximo */
+}
+
+
+.whatsButton_Box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFF;
+  padding: 3px;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar {
+  background-color: #FFF;
+  border-radius:15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #D9D9D9;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #00A5DF;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #00A5DF;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  /* Color del riel */
+}
+
+
+::-webkit-scrollbar-thumb:disabled {
+  background-color: #D9D9D9;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  background-color: transparent;
+  color: #A5D6E8 !important;
+  z-index: 5;
+}
+
+::-webkit-scrollbar-button:start:decrement:hover,
+::-webkit-scrollbar-button:end:increment:hover {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-button:start:decrement:active,
+::-webkit-scrollbar-button:end:increment:active {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-button:vertical:start:increment {
+  background-color: #888;
+  color: #fff;
+  content: "↑";
+  font-size: 12px;
+}
+
+::-webkit-scrollbar-button:vertical:end:decrement {
+  background-color: #888;
+  color: #fff;
+  content: "↓";
+  font-size: 12px;
+}
+
+#sendTextButton {
+  background-color: #00659E;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 10px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 15px #00659E !important;
+}
+
+#attachFileButton {
+  background-color: #00659E;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 10px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 15px #00659E !important;
+}
+
+#sendTextButtonMessage{
+  background-color: #00659E;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 22px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 15px #00659E !important;
+}
+
+input[type="checkbox"]:not(:checked) {
+  background-color: #FFF;
+  border: 1px solid #D9D9D9;
+}
+
+input[type="checkbox"]:hover {
+  background-color: #A5D6E8;
+  border: 1px solid #00A5DF;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #fff !important;
+  border: 1px solid #D9D9D9;
+  box-shadow: 1px 0px 15px rgba(0, 101, 158, 0.2);
+}
+
+input[type="checkbox"]:disabled {
+  background-color: #F0F0F0;
+  border: 1px solid #D9D9D9;
+}
+
+.nav-tabs .nav-link.active {
+  border-color: transparent !important;
+}
+
+a.list-group-item.active {
+  color: #FFF !important;
+}
+
+#backButton {
+  margin-top: -26px;
+    background-color: #0CEBAC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 113px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 0px;
+    height: 0px;
+}
+
+#backButtonIcon,
+#newMessageButtonIcon{
+  float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 12px;
+    width: 35px;
+    height: 35px;
+    background-color: #0CEBAC;
+    font-size: 20px;
+    margin-top: -14px;
+    flex-direction: row;
+}
+#newMessageButtonIcon{
+  margin-top: 4px;
+}
+
+
+
+
+/******** media querys **********/
+
+@media screen and (min-width: 250px) and (max-width: 510px) {
+
+  #recentsButton,
+  #messagesTabButton,
+  #ticketsButton {
+    width: 33px;
+    height: 33px;
+  }
+}
+
+@media (max-width: 500px) {
+
+  /* Estilos para resoluciones menores o iguales a 300px */
+  #ImagenIndex {
+    display: none;
+  }
+}

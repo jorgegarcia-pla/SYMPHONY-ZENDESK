@@ -1,0 +1,205 @@
+html { 
+    background: url(../img/fondo.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: transparent !important;
+}
+
+#search {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    text-overflow: ellipsis;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#search:focus {
+  border-color: #4d90fe;
+}
+
+#mapa {
+    height: 450px;
+    width: 100%; 
+    margin-bottom: 10px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+    height: 100%;
+    align-content: center;
+    width: 100%;
+    margin: 2rem;
+    -ms-margin:auto;
+    -ms-position:relative;
+    -ms-left:0px;
+    -ms-top:0px;
+}
+
+.card{
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    -ms-margin-left: 0px;
+    width: 400px;
+    -ms-margin:auto;
+    -ms-position:relative;
+    -ms-left:0px;
+    -ms-top:0px;
+}
+
+h6 {
+    -ms-font-size: 10px;
+}
+
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+#mapBuilding {
+    text-align: center;
+}
+
+.cover-container {
+  max-width: 100%;
+}
+
+
+/*
+ * Header
+ */
+.masthead {
+  font-size: 15px;
+}
+
+.masthead-brand {
+    font-size: 30px; 
+    margin-bottom: 2em;
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(200, 200, 200, 1);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(200, 200, 200, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #888;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}
+
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+}
+
+.cover-heading {
+    color: #000;
+}
+
+
+/*
+ * Footer
+ */
+.mastfoot {
+  color: rgba(255, 255, 255, .5);
+}
+
+.modal-body {
+    text-align: center;
+}
+
+/** Spinner **/
+.loader{
+    position: relative;
+    text-align: center;
+    margin: 15px auto 35px auto;
+    z-index: 9999;
+    display: block;
+    width: 80px;
+    height: 80px;
+    border: 10px solid rgba(0, 0, 0, .3);
+    border-radius: 50%;
+    border-top-color: #000;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+/** Modal Spin **/
+.loader-txt {
+    p {
+        font-size: 13px;
+        color: #666;
+        small {
+            font-size: 11.5px;
+            color: #999;
+        }
+    }
+}
+
