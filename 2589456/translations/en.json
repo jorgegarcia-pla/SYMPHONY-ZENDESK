@@ -1,0 +1,8 @@
+{
+  "app": {
+    "installation_instructions": "To complete the installation, it is necessary follow the following steps: \n 1) Get your account by sending an e-mail to info@mcmtelecom.com.mx, with your Name, Company name and number of seats for your team. \n 2) The Symphony team will get in touch to provide your credentials and installation settings. \n 3) Install Symphony WebRTC Softphone on your Zendesk Site. \n 4) Login using the assigned credentials by the Symphony Team via e-mail.",
+    "long_description": "**Available to all customers on a Zendesk Suite plan or Customers with Support + Talk Partner Edition - Learn more at https://www.zendesk.com/pricing** This WebRTC Symphony softphone allows you touse the Symphony extension directly in Zendesk to create and follow ticket creation \n\n This solution will help your organization / call center increase productivity and optimize every communication channel. \n\n *Features* \n - Click to call \n - Symphony Contacts \n - Call History \n - 4 Simultaneous calls option \n - Conference call option \n - Direct and attended transfer",
+    "short_description": "Symphony WebRTC Softphone to make and receive calls.",
+    "name": "Symphony WebRTC Softphone"
+  }
+}

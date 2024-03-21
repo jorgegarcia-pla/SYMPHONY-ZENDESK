@@ -1,0 +1,38 @@
+{
+    "name": "Symphony for Zendesk Test",
+    "author": {
+        "name": "MCM Telecom",
+        "email": "alopez@mcmtelecom.com.mx",
+        "url": "https://www.mcmtelecom.com.mx"
+    },
+    "defaultLocale": "en",
+    "private": false,
+    "location": {
+        "support": {
+            "top_bar": {
+                "url": "assets/index.html",
+                "size": {
+                    "height": "640px",
+                    "width": "300px"
+                }
+            }
+        }
+    },
+    "parameters": [
+        {
+          "name": "emailSym",
+          "type": "text",
+          "required": true,
+          "secure": false,
+          "default": "user@domain.net"
+        },
+        {
+          "name": "passwordSym",
+          "type": "password",
+          "required": true,
+          "secure": true
+        }
+      ],
+    "version": "2.2",
+    "frameworkVersion": "2.0"
+}

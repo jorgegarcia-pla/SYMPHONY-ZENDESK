@@ -1,0 +1,98 @@
+/* Made with love by Mutiullah Samim*/
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  color: #000;
+  box-shadow: inset 0 0 5rem rgba(16, 38, 97, .7);
+}
+
+.container{
+    height: 100%;
+    align-content: center;
+    width: 100%;
+    -ms-margin:auto;
+    -ms-position:relative;
+    -ms-left:0px;
+    -ms-top:0px;
+}
+
+.card{
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    -ms-margin-left: 0px;
+    width: 400px;
+    -ms-margin:auto;
+    -ms-position:relative;
+    -ms-left:0px;
+    -ms-top:0px;
+}
+
+.forgot{
+height: 270px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+
+}
+
+.card-header h3{
+color: black;
+}
+
+
+.input-group-prepend span{
+width: 50px;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.btnSubmit{
+    font-weight: 600;
+    color: #fff;
+    background-color: #0062cc;
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: black;
+
+width: 100px;
+}
+
+
+.links{
+color: black;
+}
+
+.links a{
+margin-left: 4px;
+}
