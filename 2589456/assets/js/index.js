@@ -2160,34 +2160,59 @@ function requestCallRecents() {
 	});
 }
 
-function fillContacts(array) {
-	var txtContact = "<ul class='list-group'>";
+$(document).ready(function() {
+    // Llama a fillContacts al cargar la página para establecer el margen inicial
+    fillContacts(arrayContacts, "");
 
-	for (var i = 0; i < array.length; i++) {
-		var name = array[i][0];
-		var callTo = array[i][1];
-		txtContact += `<li class="list-group-item flex justify-content-between friend-drawer--onhover:hover">`;
-		txtContact += "<div class='row ml-1'>";
-		txtContact += `<div class="col-2 lateral-list"></div>`;
-		txtContact += `<div class="col-8 centerDivList" align="left">`;
-		txtContact += `<div class='row'>`;
-		txtContact += `<div class='col-12 contact' style="margin-left:23%;" align="left"><strong>${name}</strong></div>`;
-		txtContact += `</div>`;
-		txtContact += `<div class='row'>`;
-		txtContact += `<div class='col-12 contact-number' style="margin-left:23%;" align="left">${callTo}</div>`;
-		txtContact += `</div>`;
-		txtContact += `</div>`;
-		txtContact += `<div class="col-2 lateral-button" style="text-align: -webkit-center; margin-left: auto;" align="left"><button type="button" class="btn btn-success btn-circle" onclick='makeRecentCall("${callTo}", false)'><div class="material-icons md-14">phone</div></button></div>`;
-		txtContact += "</div>";
-		txtContact += "</li>";
-		txtContact += `<hr class="contactshr">`;
-	}
+    // Evento de entrada de texto para el campo de búsqueda
+    $('#searchContact').on('input', function() {
+        var searchText = $(this).val().toLowerCase();
+        fillContacts(arrayContacts, searchText);
+    });
+});
 
-	txtContact += "</ul>";
 
-	$("#contactsDiv").html(txtContact);
+function fillContacts(array, searchText) {
+    var txtContact = "<ul class='list-group'>";
+
+   /* // Establece el margen izquierdo inicialmente al 23%
+    var marginLeft = "15%";
+
+    // Si hay texto de búsqueda, elimina el margen izquierdo
+    if (searchText) {
+        marginLeft = "23";
+    } */
+	
+
+    for (var i = 0; i < array.length; i++) {
+        var name = array[i][0];
+        var callTo = array[i][1];
+
+        // Si hay texto de búsqueda y no coincide con el nombre o el número de teléfono, saltar este contacto
+        if (searchText && !name.toLowerCase().includes(searchText) && !callTo.includes(searchText)) {
+            continue;
+        }
+
+		txtContact += `<li class="list-group-item flex justify-content-between friend-drawer--onhover:hover" style="margin-bottom: -35px;">`;
+        txtContact += `<div class="col-2 lateral-list"></div>`;
+        txtContact += `<div class="col-8 centerDivList" align="left" style="margin-left:15%;">`;
+        txtContact += `<div class='row spacetxt'>`;
+        txtContact += `<div class='col-12 contact' style="margin-left:10;" align="left"><strong class="spacetxt">${name}</strong></div>`;
+        txtContact += `</div>`;
+        txtContact += `<div class='row spacetxt'>`;
+        txtContact += `<div class='col-12 contact-number' style="margin-left:10;" align="left">${callTo}</div>`;
+        txtContact += `</div>`;
+        txtContact += `</div>`;
+        txtContact += `<div class="col-2 lateral-button" style="text-align: -webkit-center; margin-left: auto; top: -30px;" align="left"><button type="button" class="btn btn-success btn-circle" onclick='makeRecentCall("${callTo}", false)'><div class="material-icons md-14">phone</div></button></div>`;
+        txtContact += "</div>";
+        txtContact += "</li>";
+        txtContact += `<hr class="contactshr">`;
+    }
+
+    txtContact += "</ul>";
+
+    $("#contactsDiv").html(txtContact);
 }
-
 
 function fillCallRecents(recentCallsList) {
 	let recentCallsListPlaced = recentCallsList.placed.callLogsEntry;

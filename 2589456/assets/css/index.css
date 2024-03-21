@@ -1044,6 +1044,30 @@ input:disabled {
   cursor: not-allowed;
 }
 
+#searchContact {
+  width: 250px; 
+  height: 30px;
+  margin: 0 auto; /* Para centrarlo horizontalmente */
+  padding: 10px; 
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s; 
+  outline: none;
+  font-size: 15px;
+}
+
+/* Estilo para el input cuando está enfocado */
+#searchContact:focus {
+  background-color: #FFF; 
+  color: #000; 
+  border-color: #00A5DF;
+}
+
+.spacetxt {
+  width: 150px; /* Ancho del contenedor */
+  overflow: hidden; /* Oculta el texto que excede el contenedor */
+  text-overflow: ellipsis; /* Trunca el texto que excede el contenedor y agrega "..." al final */
+}
+
 select {
   border-radius: 10px;
   box-sizing: border-box;
