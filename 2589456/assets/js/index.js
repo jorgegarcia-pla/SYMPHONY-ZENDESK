@@ -2137,6 +2137,7 @@ function requestCallRecents() {
 	$("#recentReceivedCallsDiv").show();
 	$("#recentMissedCallsDiv").show();
 	$('#ModalCarga').modal('show');
+	$('#modalBackdrop').show(); 
 	$.ajax({
 		method: "GET",
 		url: `https://integrations.mcmtelecomapi.com/dev/calllog?userId=${userIdSymp}&password=${encodeURIComponent(
@@ -2147,11 +2148,13 @@ function requestCallRecents() {
 			fillCallRecents(JSON.parse(data));
 			checkSize();
 			$('#ModalCarga').modal('hide');
+			$('#modalBackdrop').hide(); // Ocultar el modal de carga
 		},
 		error: function (jqXHR, textStatus, errorThrown) {
 			console.error("Error status: ", jqXHR.status, ", Details: ", errorThrown);
 			console.error("Response: ", jqXHR.responseText);
 			$('#ModalCarga').modal('hide');
+			$('#modalBackdrop').hide(); // Ocultar el modal de carga 
 		},
 		complete: function (xhr, status) { },
 	});
@@ -4408,6 +4411,7 @@ function getChatConvs() {
 	// Mostrar el modal antes de realizar las peticiones AJAX
 	$("#conversationsDiv").html("");
     $('#ModalCarga').modal('show');
+	$('#modalBackdrop').show(); // Ocultar el modal de carga
 
 	// Hacer las dos peticiones AJAX simultáneamente
 	Promise.all([
@@ -4463,10 +4467,12 @@ function getChatConvs() {
 			//Pintar chats
 			//console.log("Todos los chats:", all_chats);
 			$('#ModalCarga').modal('hide');
+			$('#modalBackdrop').hide();
 			drawConversations(all_chats);
 		});
 	}).catch(function(error) {
         $('#ModalCarga').modal('hide');
+		$('#modalBackdrop').hide();
 		// Al menos una de las peticiones falló
 		console.error("Error:", error);
 	});
@@ -4675,6 +4681,7 @@ function ticketsProcess() {
 	$("#createTicketDiv").hide();
 	$("#ticketsDiv").html("");
 	$('#ModalCarga').modal('show');
+	$('#modalBackdrop').show();
 	//Hacer petición a lista de llamadas no procesadas
 	var listCalls = {
 		url: `https://integrations.mcmtelecomapi.com/dev/callsog?userId=${userIdSymp}&idType=2`,
@@ -4722,6 +4729,7 @@ function ticketsProcess() {
 				`;
 			}
 			$('#ModalCarga').modal('hide');
+			$('#modalBackdrop').hide();
 			$("#ticketsDiv").html(txt);
 			$("#ticketsDiv").show();
 		}
