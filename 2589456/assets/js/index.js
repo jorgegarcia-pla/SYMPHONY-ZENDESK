@@ -3405,6 +3405,33 @@ function OpenNew() {
 }
 
 function sendMessage() {
+
+	// Verifica si el campo del número de teléfono está vacío
+    if ($("#toPerson").val().trim() === "") {
+        // Muestra la alerta
+		console.error("El número del destinatario está vacío");
+        $("#textErrorAlert").html("Ingresa un número de telefono para enviar el mensaje");
+        $("#autoCloseAlert").fadeIn();
+        setTimeout(function () {
+            $("#autoCloseAlert").fadeOut();
+        }, 3000);
+        // No envíes el mensaje y sal del método
+        return;
+    }
+    
+	// Verifica si el campo de mensaje esta vacio
+	if ($("#chatTrayBox").val().trim() === "") {
+        // Muestra la alerta
+		console.error("El mensaje se encuentra vacio");
+        $("#textErrorAlert").html("Ingresa un mensaje valido para enviar el mensaje");
+        $("#autoCloseAlert").fadeIn();
+        setTimeout(function () {
+            $("#autoCloseAlert").fadeOut();
+        }, 3000);
+        // No envíes el mensaje y sal del método
+        return;
+    }
+
 	let urlSend = `{"action":"sendMessage", "text":"${$(
 		"#chatTrayBox"
 	).val()}", "to":"${$(
