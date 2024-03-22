@@ -1045,27 +1045,54 @@ input:disabled {
 }
 
 #searchContact {
-  width: 250px; 
-  height: 30px;
-  margin: 0 auto; /* Para centrarlo horizontalmente */
-  padding: 10px; 
+  position: absolute;
+  z-index: 2;
+  top: 177px;
+  right: 28px;
+  width: 225px;
+  height: 28px;
+  margin: 0 auto;
+  padding: 10px;
   border-radius: 6px;
-  transition: background-color 0.3s, color 0.3s; 
+  transition: background-color 0.3s, color 0.3s;
   outline: none;
   font-size: 15px;
 }
 
 /* Estilo para el input cuando está enfocado */
 #searchContact:focus {
-  background-color: #FFF; 
-  color: #000; 
-  border-color: #00A5DF;
+background-color: #FFF; 
+color: #000; 
+border-color: #00A5DF;
 }
 
 .spacetxt {
-  width: 150px; /* Ancho del contenedor */
-  overflow: hidden; /* Oculta el texto que excede el contenedor */
-  text-overflow: ellipsis; /* Trunca el texto que excede el contenedor y agrega "..." al final */
+width: 175px; /* Ancho del contenedor */
+overflow: hidden; /* Oculta el texto que excede el contenedor */
+text-overflow: ellipsis; /* Trunca el texto que excede el contenedor y agrega "..." al final */
+}
+
+#ButtonSearch {
+position: fixed;
+top: 162px;
+right: 10px;
+z-index: 1;
+}
+
+#BackButton{
+position: fixed;
+top: 174px;
+right: 23px;
+z-index: 3;
+color: #00A5DF;
+background-color: initial;
+border-color: transparent;
+border: none; /* Elimina el borde */
+outline: none;
+}
+
+#BackButton .material-icons {
+font-size: 24px; /* Tamaño del icono */
 }
 
 select {
@@ -1528,7 +1555,8 @@ a.list-group-item.active {
 }
 
 #backButtonIcon,
-#newMessageButtonIcon{
+#newMessageButtonIcon,
+#ButtonSearchIcon{
   float: right;
     display: flex;
     align-items: center;
@@ -1542,7 +1570,9 @@ a.list-group-item.active {
     margin-top: -14px;
     flex-direction: row;
 }
-#newMessageButtonIcon{
+
+#newMessageButtonIcon,
+#ButtonSearchIcon{
   margin-top: 4px;
 }
 

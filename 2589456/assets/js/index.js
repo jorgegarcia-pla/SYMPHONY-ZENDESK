@@ -2195,7 +2195,7 @@ function fillContacts(array, searchText) {
 
 		txtContact += `<li class="list-group-item flex justify-content-between friend-drawer--onhover:hover" style="margin-bottom: -35px;">`;
         txtContact += `<div class="col-2 lateral-list"></div>`;
-        txtContact += `<div class="col-8 centerDivList" align="left" style="margin-left:15%;">`;
+        txtContact += `<div class="col-8 centerDivList" align="left" style="margin-left:10px;">`;
         txtContact += `<div class='row spacetxt'>`;
         txtContact += `<div class='col-12 contact' style="margin-left:10;" align="left"><strong class="spacetxt">${name}</strong></div>`;
         txtContact += `</div>`;
@@ -2203,7 +2203,7 @@ function fillContacts(array, searchText) {
         txtContact += `<div class='col-12 contact-number' style="margin-left:10;" align="left">${callTo}</div>`;
         txtContact += `</div>`;
         txtContact += `</div>`;
-        txtContact += `<div class="col-2 lateral-button" style="text-align: -webkit-center; margin-left: auto; top: -30px;" align="left"><button type="button" class="btn btn-success btn-circle" onclick='makeRecentCall("${callTo}", false)'><div class="material-icons md-14">phone</div></button></div>`;
+        txtContact += `<div class="col-2 lateral-button" style="text-align: -webkit-center; margin-left:183px; top: -30px;" align="left"><button type="button" class="btn btn-success btn-circle" onclick='makeRecentCall("${callTo}", false)'><div class="material-icons md-14">phone</div></button></div>`;
         txtContact += "</div>";
         txtContact += "</li>";
         txtContact += `<hr class="contactshr">`;
@@ -2212,6 +2212,44 @@ function fillContacts(array, searchText) {
     txtContact += "</ul>";
 
     $("#contactsDiv").html(txtContact);
+}
+
+function OpenSearch() {
+    var searchContainer = document.getElementById("searchContainer");
+    var title = document.getElementById("title");
+    var searchButtonContainer = document.getElementById("searchButtonContainer");
+    var backButton = document.getElementById("BackButton");
+
+    if (searchContainer.style.display === "none" || searchContainer.style.display === "") {
+        searchContainer.style.display = "block";
+        title.style.display = "none"; // Oculta el texto de contactos
+        searchButtonContainer.style.display = "block"; // Muestra el botón "Back"
+		ButtonSearch.style.display = "none";
+    } else {
+        searchContainer.style.display = "none";
+        title.style.display = "block"; // Muestra el texto de contactos nuevamente
+        searchButtonContainer.style.display = "none"; // Oculta el botón "Back"
+    }
+}
+
+function GoBack() {
+    var searchContainer = document.getElementById("searchContainer");
+    var title = document.getElementById("title");
+    var backButtonContainer = document.getElementById("searchButtonContainer"); // Cambiar al contenedor correcto del botón de búsqueda
+
+    // Oculta el contenedor de búsqueda y el botón de búsqueda
+    searchContainer.style.display = "none";
+    backButtonContainer.style.display = "none";
+
+    // Muestra el texto de contactos nuevamente y el botón de búsqueda
+    title.style.display = "block";
+    document.getElementById("ButtonSearch").style.display = "block"; // Muestra el botón de búsqueda
+    
+    // Eliminar el texto del input
+    document.getElementById("searchContact").value = "";
+    
+    // Restablecer la lista de contactos a su estado original
+    fillContacts(arrayContacts, "");
 }
 
 function fillCallRecents(recentCallsList) {
