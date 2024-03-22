@@ -1821,9 +1821,17 @@ $("#transferButton").click(function () {
 	let transferTo;
 	let targetCall;
 	transferTo = $("#callTo").val().trim();
+	var transferButtonFlag= true; //bandera para transferir
 
 	let calls = 0;
 	calls = countCalls();
+	
+	if (transferButtonFlag && keycode == "13") {
+		console.log("Para transferir llamada, presiona el botón AddCall");
+		$("#textErrorAlert").html(
+			"Para transferir llamada, presiona el botón AddCall"
+		);
+	}
 	if (calls === 1) {
 		if (transferTo === "") {
 			$("#textErrorAlert").html("Ingresa un número para trasferir");
