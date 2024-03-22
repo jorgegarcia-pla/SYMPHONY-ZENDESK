@@ -5875,10 +5875,12 @@ button.close {
   outline: 0;
 }
 
+/*Cambio de Owerflow Y por desbordamiento del icono de notificacion*/
 .modal-open .modal {
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
+
 
 .modal-dialog {
   position: relative;

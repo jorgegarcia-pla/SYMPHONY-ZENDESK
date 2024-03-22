@@ -4558,6 +4558,7 @@ function getChatConvs() {
 			}
 			//console.log("Respuestas de las peticiones a 'getLastMessageSMS':", respuestas4);
 			//console.log("Respuesta2 con lastMessageSMS asociado:", respuesta2);
+			// Ordenar todos los chats por tiempo
 			all_chats.sort(function(a, b) {
 			    return b.time - a.time;
 			});
@@ -4567,6 +4568,26 @@ function getChatConvs() {
 			$('#ModalCarga').modal('hide');
 			$('#modalBackdrop').hide();
 			drawConversations(all_chats);
+
+			// Lógica para determinar si hay un nuevo mensaje
+var nuevoMensaje = false;
+for (var i = 0; i < all_chats.length; i++) {
+	// Aquí puedes implementar la lógica para detectar nuevos mensajes
+	// Comparar el tiempo del mensaje con el tiempo actual
+	var currentTime = Math.round(new Date().getTime() / 1000);
+	if ((currentTime - all_chats[i].time) < 10) { // Suponiendo que el mensaje es nuevo si se recibió en el último minuto
+		nuevoMensaje = true;
+		break;
+	}
+}
+
+// Mostrar el modal de notificación si hay nuevos mensajes
+if (nuevoMensaje) {
+	showNotification("Tienes nuevos mensajes");
+} else {
+	hideNotification();
+}
+
 		});
 	}).catch(function(error) {
         $('#ModalCarga').modal('hide');
@@ -4574,6 +4595,18 @@ function getChatConvs() {
 		// Al menos una de las peticiones falló
 		console.error("Error:", error);
 	});
+
+	// Función para mostrar el modal de notificación
+function showNotification(message) {
+	document.getElementById("notificationMessage").innerText = message;
+	document.getElementById("notificationIcon").style.display = "block";
+	}
+	
+	// Función para ocultar el modal de notificación
+	function hideNotification() {
+	document.getElementById("notificationIcon").style.display = "none";
+	}
+
 }
 
 function getWhatsConvs() {
