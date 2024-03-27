@@ -1439,10 +1439,9 @@ a.nav-link.active #ticketsButton {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
+  background-color: transparent;
   /* Color del riel */
 }
-
 
 ::-webkit-scrollbar-thumb:disabled {
   background-color: #D9D9D9;
@@ -1453,16 +1452,9 @@ a.nav-link.active #ticketsButton {
   background-color: transparent;
   color: #A5D6E8 !important;
   z-index: 5;
-}
-
-::-webkit-scrollbar-button:start:decrement:hover,
-::-webkit-scrollbar-button:end:increment:hover {
   background-color: transparent;
-}
-
-::-webkit-scrollbar-button:start:decrement:active,
-::-webkit-scrollbar-button:end:increment:active {
-  background-color: transparent;
+  height: 0px; /* Reduce la altura */
+  border-radius: 4px; /* Margen redondeado */
 }
 
 ::-webkit-scrollbar-button:vertical:start:increment {
@@ -1477,6 +1469,11 @@ a.nav-link.active #ticketsButton {
   color: #fff;
   content: "↓";
   font-size: 12px;
+}
+
+::-webkit-scrollbar-button:start:decrement:hover,
+::-webkit-scrollbar-button:end:increment:hover {
+  background-color: transparent;
 }
 
 #sendTextButton {
